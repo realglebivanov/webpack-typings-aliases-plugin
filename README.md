@@ -7,7 +7,7 @@ Neither webpack(I mean plugins) nor typescript replace this aliases with actual 
 This plugin is exactly for this situation. 
 After all aliases are correctly resolved you can use, e.g. Dts-bundle to bundle them in single file.
 
-#Usage
+# Usage
 ```
 const WebpackTypingsAliasesPlugin = require('webpack-typings-aliases-plugin');
 
