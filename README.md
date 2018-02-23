@@ -16,16 +16,12 @@ const WebpackTypingsAliasesPlugin = require('webpack-typings-aliases-plugin');
 
 plugins: [
   new WebpackTypingsAliasesPlugin({
-    aliases: aliases,
-    srcDir: paths.ts.srcDir,
-    buildDir: paths.ts.buildDir
+    aliases: aliases, // webpack config aliases
+    srcDir: paths.ts.srcDir, // directory where source `*.ts` files are located
+    buildDir: paths.ts.buildDir // directory where emitted `*.d.ts` definitions are located
   }),
   ...
 ]
 ```
 
-#### aliases = webpack config aliases
-#### srcDir = directory where source `*.ts` files are located
-#### buildDir = directory where emitted `*.d.ts` definitions are located
-
-Also, you need to enable set `"declaration": true` in you `tsconfig.json`.
+Also, you need to set `"declaration": true` in you `tsconfig.json`.
