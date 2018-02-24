@@ -2,7 +2,7 @@ const glob = require('glob');
 const { join } = require('path');
 const deleteEmpty = require('delete-empty');
 const AliasLoader = require('./alias-loader');
-const AliasProcessor = require('./alias-processor');
+const TypingProcessor = require('./typing-processor');
 
 module.exports = class TypingsProcessor {
   constructor(config) {
@@ -12,8 +12,8 @@ module.exports = class TypingsProcessor {
   }
 
   process() {
-    this.paths.map(path => new AliasProcessor(path, this.aliases))
-      .map(processor => processor.load())
+    this.paths.map(path => new TypingProcessor(path, this.aliases))
+      .map(processor => processor.process())
       .forEach(processor => processor.write());
     return this;
   }

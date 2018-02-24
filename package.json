@@ -1,14 +1,20 @@
 {
   "name": "webpack-typings-aliases-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Resolves typings aliases for typescript",
   "main": "src/index.js",
   "scripts": {},
-  "keywords": ["webpack", "typescript", "aliases", "plugin"],
+  "keywords": [
+    "webpack",
+    "typescript",
+    "aliases",
+    "plugin"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "delete-empty": "^2.0.0",
-    "lazy.js": "^0.5.1"
+    "lazy.js": "^0.5.1",
+    "typescript": "^2.7.2"
   }
 }
