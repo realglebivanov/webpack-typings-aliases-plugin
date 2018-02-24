@@ -3,7 +3,7 @@ Resolves typings aliases for typescript replacing them with relative paths.
 
 # About
 Sometimes you have the same aliases in your webpack config and typescript config. 
-Neither webpack(I mean plugins) nor typescript replace this aliases in `*.d.ts` files with actual paths to make aliases correct.
+Neither webpack(I mean plugins) nor typescript replace this aliases in `*.d.ts` files with actual paths to make paths correct.
 This plugin is exactly for that situation. 
 After all aliases are correctly resolved you can use, e.g. Dts-bundle to bundle them in single file.
 
