@@ -16,7 +16,7 @@ module.exports = class TypingProcessor {
 
   processNode(node) {
     if (this.shouldUpdateNode(node)) {
-      this.updateModuleSpecifier(node.moduleSpecifier);
+      if (node.moduleSpecifier) this.updateModuleSpecifier(node.moduleSpecifier);
     }
     node.forEachChild(child => this.processNode(child));
   }
