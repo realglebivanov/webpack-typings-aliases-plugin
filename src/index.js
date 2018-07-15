@@ -6,7 +6,7 @@ module.exports = class WebpackTypingsAliasesPlugin {
   }
 
   apply(compiler) {
-    compiler.plugin('done', () =>
+    compiler.hooks.done.tap(WebpackTypingsAliasesPlugin.name, () =>
       new TypingsProcessor(this.config).process().cleanUp()
     );
   }

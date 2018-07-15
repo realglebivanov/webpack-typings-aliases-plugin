@@ -6,8 +6,7 @@ module.exports = class TypingProcessor {
   constructor(path, aliases) {
     this.path = path;
     this.aliases = aliases;
-    this.content = fs.readFileSync(path).toString();
-    this.sourceFile = ts.createSourceFile(path, this.content);
+    this.sourceFile = ts.createSourceFile(path, fs.readFileSync(path).toString());
   }
 
   process() {
@@ -23,9 +22,10 @@ module.exports = class TypingProcessor {
   }
 
   updateModuleSpecifier(moduleSpecifier) {
-    moduleSpecifier.text = Object.keys(this.aliases).reduce((result, alias) => {
-      return result.replace(alias, this.getRelativePath(alias));
-    }, moduleSpecifier.text);
+    moduleSpecifier.text = Object.keys(this.aliases).reduce(
+      (result, alias) => result.replace(alias, this.getRelativePath(alias)),
+      moduleSpecifier.text || ''
+    );
   }
 
   getRelativePath(alias) {

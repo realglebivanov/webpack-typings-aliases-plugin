@@ -1,6 +1,6 @@
 {
   "name": "webpack-typings-aliases-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Resolves typings aliases for typescript",
   "main": "src/index.js",
   "repository": "github:glebivanov816/webpack-typings-aliases-plugin",
@@ -15,6 +15,7 @@
   "dependencies": {
     "delete-empty": "^2.0.0",
     "glob": "^7.1.2",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "webpack": "^4.16.0"
   }
 }
