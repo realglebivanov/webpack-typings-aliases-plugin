@@ -29,7 +29,9 @@ module.exports = class TypingProcessor {
   }
 
   getRelativePath(alias) {
-    return relative(parse(this.path).dir, this.aliases[alias]);
+    const path = relative(parse(this.path).dir, this.aliases[alias]);
+
+    return path.startsWith('.') ? path : `./${path}`;
   }
 
   shouldUpdateNode(node) {
